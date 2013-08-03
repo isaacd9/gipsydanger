@@ -2,11 +2,25 @@ body {
   padding-top: 50px;
 }
 
-.row {
+.container > .row {
 	padding: 100px 0 0 0;
 }
 
-.col-lg-4 {
+.form-box {
   background-color: #eee;
-  padding-bottom: 20px;
+  padding: 20px 40px 40px 40px;
+}
+
+.half-control {
+	display: inline-block;
+	width: 49.5%;
+}
+
+.form-box h3 {
+	padding-bottom: 20px;
+}
+
+.form-box label {
+	font-weight: normal;
+	text-align: left !important;
 }
