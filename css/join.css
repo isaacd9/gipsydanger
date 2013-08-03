@@ -1,0 +1,12 @@
+body {
+  padding-top: 50px;
+}
+
+.row {
+	padding: 100px 0 0 0;
+}
+
+.col-lg-4 {
+  background-color: #eee;
+  padding-bottom: 20px;
+}
