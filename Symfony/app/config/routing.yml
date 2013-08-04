@@ -1,0 +1,4 @@
+gipsydangerindex:
+    resource: "@gipsydangerindexBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,7 @@
+parameters:
+#    gipsydangerindex.example.class: gipsydanger\indexBundle\Example
+
+services:
+#    gipsydangerindex.example:
+#        class: %gipsydangerindex.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
