@@ -1,0 +1,3 @@
+gipsydangerindex_homepage:
+    pattern:  /
+    defaults: { _controller: gipsydangerindexBundle:index:index }
