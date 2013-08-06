@@ -4,3 +4,4 @@
 /Symfony/app/logs/*
 /Symfony/vendor/
 /Symfony/app/parameters.yml
+.DS_Store
