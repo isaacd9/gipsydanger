@@ -8,6 +8,6 @@ class indexController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('gipsydangerindexBundle:Default:index.html.twig');
+        return $this->render('gipsydangerindexBundle:index:index.html.twig');
     }
 }
