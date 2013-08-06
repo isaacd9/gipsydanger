@@ -1,4 +1,4 @@
-gipsydangerpeople_profile:
+pgipsydangerpeople_profile:
     pattern:  /profile/{username}
     defaults: { _controller: gipsydangerpeopleBundle:profile:show }
 
