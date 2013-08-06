@@ -8,7 +8,7 @@ class profileController extends Controller
 {
     public function showAction($username)
     {
-          return new Response($username . "'s profile");
+          return new Response($username . "'s profileß");
 //        return $this->render('Login page here');
     }
 }
