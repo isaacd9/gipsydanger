@@ -18,6 +18,9 @@ class AppKernel extends Kernel
             new Propel\PropelBundle\PropelBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new gipsydanger\indexBundle\gipsydangerindexBundle(),
+            new gipsydanger\peopleBundle\gipsydangerpeopleBundle(),
+            new gipsydanger\searchBundle\gipsydangersearchBundle(),
+            new gipsydanger\messageBundle\gipsydangermessageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

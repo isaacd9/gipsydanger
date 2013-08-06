@@ -1,0 +1,7 @@
+parameters:
+#    gipsydangermessage.example.class: gipsydanger\messageBundle\Example
+
+services:
+#    gipsydangermessage.example:
+#        class: %gipsydangermessage.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

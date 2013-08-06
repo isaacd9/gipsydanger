@@ -29,7 +29,8 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        ['gipsydangerindexBundle']
+    bundles:
+        ['gipsydangerindexBundle','gipsydangerpeopleBundle','gipsydangersearchBundle']
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
