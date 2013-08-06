@@ -8,7 +8,6 @@ class profileController extends Controller
 {
     public function showAction($username)
     {
-          return new Response($username . "'s profile");
-//        return $this->render('Login page here');
+          return $this->render('gipsydangerpeopleBundle:profile:profile.html.twig');
     }
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>coach.me</title>
+    <meta name="viewport" content="width=devicewidth, initialscale=1.0">
+    <! Bootstrap >
+    {% block stylesheets %}
+    	{% stylesheets '../app/Resources/public/css/*' %}
+    		<link rel="stylesheet" type="text/css" charset="UTF-8" media="all" href="{{ bootstrap.min.css }}"/>
+    		<link rel="stylesheet" type="text/css" charset="UTF-8" media="all" href="{{ bootstrap-glyphicons.css }}"/>
+    		<link rel="stylesheet" type="text/css" charset="UTF-8" media="all" href="{{ global.css }}"/>
+    	{% endstylesheets %}
+    {% endblock %}
+  </head>
+  <body>
+    <div class="navbar navbarinverse navbarfixedtop">
+      <div class="container">
+        <button type="button" class="navbartoggle" datatoggle="collapse" datatarget=".navcollapse">
+          <span class="iconbar"></span>
+          <span class="iconbar"></span>
+          <span class="iconbar"></span>
+        </button>
+        <a class="navbarbrand" href="#">coach.me</a>
+        <div class="navcollapse collapse">
+          <ul class="nav navbarnav">
+            <li><a href="#about">Find a Coach</a></li>
+          </ul>
+          <ul class="nav navbarnav pullright">
+            <li><a href="#join">Join</a></li>
+            <li><a href="#login">Login</a></li>
+          </ul>
+        </div><!/.navcollapse >
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="startertemplate">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><! /.container >
+
+    <! JavaScript plugins (requires jQuery) >
+    {% block javascripts %}
+    	{% javascripts '../app/Resources/public/js/*' %}
+    		<script type="text/javascript" src="{{ bootstrap.min.js }}"></script>
+    		<script type="text/javascript" src="{{ jquery-1.10.2.min.js }}"></script>
+    	{% endjavascripts %}
+    {% endblock %}
+  </body>
+</html>
