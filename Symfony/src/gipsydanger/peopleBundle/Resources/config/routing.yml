@@ -1,3 +1,11 @@
-gipsydangerpeople_homepage:
+gipsydangerpeople_profile:
     pattern:  /profile/{username}
     defaults: { _controller: gipsydangerpeopleBundle:profile:show }
+
+gipsydangerpeople_login:
+    pattern:  /login/
+    defaults: { _controller: gipsydangerpeopleBundle:accounts:login }
+
+gipsydangerpeople_signup:
+    pattern:  /sign-up/
+    defaults: { _controller: gipsydangerpeopleBundle:accounts:signup }
