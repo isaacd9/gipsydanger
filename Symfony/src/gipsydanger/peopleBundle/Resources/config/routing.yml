@@ -1,0 +1,3 @@
+gipsydangerpeople_homepage:
+    pattern:  /profile/{username}
+    defaults: { _controller: gipsydangerpeopleBundle:profile:show }

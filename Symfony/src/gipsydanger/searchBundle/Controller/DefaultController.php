@@ -1,6 +1,6 @@
 <?php
 
-namespace gipsydanger\indexBundle\Controller;
+namespace gipsydanger\searchBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('gipsydangerindexBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('gipsydangersearchBundle:Default:index.html.twig', array('name' => $name));
     }
 }

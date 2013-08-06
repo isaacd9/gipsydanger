@@ -1,0 +1,3 @@
+gipsydangermessage_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: gipsydangermessageBundle:Default:index }

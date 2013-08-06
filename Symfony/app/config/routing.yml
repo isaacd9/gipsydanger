@@ -1,3 +1,15 @@
+gipsydangermessage:
+    resource: "@gipsydangermessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gipsydangersearch:
+    resource: "@gipsydangersearchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gipsydangerpeople:
+    resource: "@gipsydangerpeopleBundle/Resources/config/routing.yml"
+    prefix:   /
+
 gipsydangerindex:
     resource: "@gipsydangerindexBundle/Resources/config/routing.yml"
     prefix:   /
