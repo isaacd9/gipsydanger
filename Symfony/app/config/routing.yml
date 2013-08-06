@@ -8,7 +8,7 @@ gipsydangersearch:
 
 gipsydangerpeople:
     resource: "@gipsydangerpeopleBundle/Resources/config/routing.yml"
-    prefix:   /profile/
+    prefix:   /
 
 gipsydangerindex:
     resource: "@gipsydangerindexBundle/Resources/config/routing.yml"
