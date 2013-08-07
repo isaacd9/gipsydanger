@@ -15,4 +15,16 @@ class accountsController extends Controller
     {
         return $this->render('gipsydangerpeopleBundle:join:join.html.twig');
     }
+
+    public function signupFormAction($type)
+    {
+    	switch($type) {
+    		case "coach":
+    			return $this->render('gipsydangerpeopleBundle:join:coach:coach.html.twig');
+    		case "normal":
+    			return $this->render('gipsydangerpeopleBundle:join:normal:normal.normal.html.twig');
+    		default:
+    			throw new exception();
+    	}
+    }
 }

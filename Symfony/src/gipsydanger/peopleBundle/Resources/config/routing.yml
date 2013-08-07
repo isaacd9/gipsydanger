@@ -9,3 +9,11 @@ gipsydangerpeople_login:
 gipsydangerpeople_signup:
     pattern:  /sign-up/
     defaults: { _controller: gipsydangerpeopleBundle:accounts:signup }
+
+gipsydangerpeople_signup_coach:
+    pattern: /sign-up/coach/
+    defaults: {_controller: gipsydangerpeopleBundle:accounts:signupForm, type: coach}
+
+gipsydangerpeople_signup_user:
+    pattern: /sign-up/normal/
+    defaults: {_controller: gipsydangerpeopleBundle:accounts:signupForm, type: normal}
