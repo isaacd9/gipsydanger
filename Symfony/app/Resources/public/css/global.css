@@ -1,8 +1,46 @@
+/* GLOBAL
+   ============================= */
+
 body {
   padding-top: 50px;
 }
 
+/* SIGN-IN/LOGIN
+   ============================= */
+
+.form-content-box {
+  background-color: #eee;
+  padding: 20px 40px 40px 40px;
+  margin-top: 100px;
+}
+
+.half-control {
+	display: inline-block;
+	width: 49.5%;
+}
+
+.content-box h3 {
+	padding-bottom: 20px;
+}
+
+.form-content-box label {
+	font-weight: normal;
+	text-align: left !important;
+}
+
+/* HOMEPAGE
+   ============================= */
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
+}
+
+/* PROFILE
+   ============================= */
+
+.content-box {
+	background-color: #eee;
+	padding: 20px;
+	margin-top: 40px;
 }
