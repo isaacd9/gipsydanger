@@ -20,9 +20,9 @@ class accountsController extends Controller
     {
     	switch($type) {
     		case "coach":
-    			return $this->render('gipsydangerpeopleBundle:join:coach:coach.html.twig');
+    			return $this->render('gipsydangerpeopleBundle:join:coach.html.twig');
     		case "normal":
-    			return $this->render('gipsydangerpeopleBundle:join:normal:normal.normal.html.twig');
+    			return $this->render('gipsydangerpeopleBundle:join:normal.html.twig');
     		default:
     			throw new exception();
     	}
