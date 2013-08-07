@@ -10,5 +10,6 @@ class profileController extends Controller
     {
           return new Response($username . "'s profileß");
 //        return $this->render('Login page here');
+//        return $this->render('gipsydangerpeopleBundle:profile:profile.html.twig');
     }
 }
