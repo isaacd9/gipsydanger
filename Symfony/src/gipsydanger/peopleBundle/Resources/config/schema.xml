@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		<unique-column name="username" type="text" size="25" required="true" primaryString="true" />
+		<column name="password" type="text" size="40" required="true" />
+		<column name="salt" type="text" size="32" required="true" />
+		<unique-column name="email" type="text" size="60" required="true" />
+		<column name="is_active" type="integer" required="true" defaultValue="1"/>
+		<column name="role_id" type="integer" required="true"/>
+		<foreign-key foreignTable="roles">
+			<reference local="role_id" foreign="id" />
+		</foreign-key>
+	</table>
+	<table name="roles">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+		<column name="name" type="text" size="30" />
+		<unique-column name="email" type="text" size="20" />
+	</table>
+</database>
