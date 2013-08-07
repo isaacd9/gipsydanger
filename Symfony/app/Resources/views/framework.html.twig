@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	{% block title %}{% endblock %}
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% stylesheets '%kernel.root_dir%/Resources/public/css/*' %}
+      <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container">
+		    <a class="navbar-brand" href="#">coach.me</a>
+		    <div class="nav-collapse collapse">
+		      <ul class="nav navbar-nav">
+		      	{% block browsemenu %}
+		        	<li><a href="#about">Find a Coach</a></li>
+		        {% endblock %}
+		      </ul>
+		      <ul class="nav navbar-nav pull-right">
+		      	{% block joinmenu %}
+		        	<li><a href="#join">Join</a></li>
+		        {% endblock %}
+		        {% block loginmenu %}
+		        	<li><a href="#login">Login</a></li>
+		        {% endblock %}
+		      </ul>
+		    </div>
+		  </div>
+		</div>
+    <div class="container">
+    	{% block maincontent %}{% endblock %}
+    </div><!-- /.container -->
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    {% javascripts '%kernel.root_dir%/Resources/public/js/*' %}
+       <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+  </body>
+</html>

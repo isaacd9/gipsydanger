@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>coach.me</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% stylesheets '%kernel.root_dir%/Resources/public/css/*'
-    							 '@gipsydangerpeopleBundle/Resources/public/css/login.css' %}
-      <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
-  </head>
-  <body>
-    {% include '::header.html.twig' %}
-    <div class="container">
-    	<div class="row">
-    		<div class="col-lg-4 col-offset-4 form-box">
-    			<h3 class="text-primary text-center">Login</h3>
-    			<form>
-					  <fieldset>
-					    <div class="form-group">
-					      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Email">
-					    </div>
-					    <div class="form-group">
-					      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-					    </div>
-					    <div class="checkbox">
-					      <label>
-					        <input type="checkbox"> <p class="text-muted">Remember me</p>
-					      </label>
-					    </div>
-					    <button type="submit" class="btn btn-primary btn-large btn-block">Login</button>
-					  </fieldset>
-					</form>
-    		</div>
-    	</div>
-    </div><!-- /.container -->
+{% extends '::framework.html.twig' %}
 
-    <!-- JavaScript plugins (requires jQuery) -->
-    {% javascripts '%kernel.root_dir%/Resources/public/js/*' %}
-       <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-  </body>
-</html>
+{% block title %}
+<title>login | coach.me</title>
+{% endblock %}
 
+{% block loginmenu %}
+<li class="active"><a href="#login">Login</a></li>
+{% endblock %}
+
+{% block maincontent %}
+<div class="row">
+	<div class="col-lg-4 col-offset-4 form-content-box">
+		<h3 class="text-primary text-center">Login</h3>
+		<form>
+		  <fieldset>
+		    <div class="form-group">
+		      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Email">
+		    </div>
+		    <div class="form-group">
+		      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+		    </div>
+		    <div class="checkbox">
+		      <label>
+		        <input type="checkbox"> <p class="text-muted">Remember me</p>
+		      </label>
+		    </div>
+		    <button type="submit" class="btn btn-primary btn-large btn-block">Login</button>
+		  </fieldset>
+		</form>
+	</div>
+</div>
+{% endblock %}
