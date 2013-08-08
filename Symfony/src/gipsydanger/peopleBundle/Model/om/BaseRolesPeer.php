@@ -43,8 +43,8 @@ abstract class BaseRolesPeer
     /** the column name for the name field */
     const NAME = 'roles.name';
 
-    /** the column name for the email field */
-    const EMAIL = 'roles.email';
+    /** the column name for the role field */
+    const ROLE = 'roles.role';
 
     /** The default string format for model objects of the related table **/
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -65,11 +65,11 @@ abstract class BaseRolesPeer
      * e.g. RolesPeer::$fieldNames[RolesPeer::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Email', ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'email', ),
-        BasePeer::TYPE_COLNAME => array (RolesPeer::ID, RolesPeer::NAME, RolesPeer::EMAIL, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'EMAIL', ),
-        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'email', ),
+        BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Role', ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'name', 'role', ),
+        BasePeer::TYPE_COLNAME => array (RolesPeer::ID, RolesPeer::NAME, RolesPeer::ROLE, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID', 'NAME', 'ROLE', ),
+        BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'role', ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -80,11 +80,11 @@ abstract class BaseRolesPeer
      * e.g. RolesPeer::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Email' => 2, ),
-        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'email' => 2, ),
-        BasePeer::TYPE_COLNAME => array (RolesPeer::ID => 0, RolesPeer::NAME => 1, RolesPeer::EMAIL => 2, ),
-        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'EMAIL' => 2, ),
-        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'email' => 2, ),
+        BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Role' => 2, ),
+        BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'name' => 1, 'role' => 2, ),
+        BasePeer::TYPE_COLNAME => array (RolesPeer::ID => 0, RolesPeer::NAME => 1, RolesPeer::ROLE => 2, ),
+        BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'NAME' => 1, 'ROLE' => 2, ),
+        BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'role' => 2, ),
         BasePeer::TYPE_NUM => array (0, 1, 2, )
     );
 
@@ -161,11 +161,11 @@ abstract class BaseRolesPeer
         if (null === $alias) {
             $criteria->addSelectColumn(RolesPeer::ID);
             $criteria->addSelectColumn(RolesPeer::NAME);
-            $criteria->addSelectColumn(RolesPeer::EMAIL);
+            $criteria->addSelectColumn(RolesPeer::ROLE);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.name');
-            $criteria->addSelectColumn($alias . '.email');
+            $criteria->addSelectColumn($alias . '.role');
         }
     }
 

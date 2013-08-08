@@ -2,11 +2,12 @@
 <database name="default" namespace="gipsydanger\peopleBundle\Model" defaultIdMethod="native">
 	<table name="users">
 		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
-		<column name="username" type="varchar" size="25" required="true" primaryString="true" />
+		<column name="fname" type="varchar" size="25" required="true" primaryString="true" />
+		<column name="lname" type="varchar" size="25" required="true" primaryString="true" />
 		<column name="password" type="varchar" size="40" required="true" />
 		<column name="salt" type="varchar" size="32" required="true" />
 		<column name="email" type="varchar" size="60" required="true" />
-		<column name="is_active" type="integer" required="true" defaultValue="1"/>
+			<column name="is_active" type="integer" required="true" defaultValue="1"/>
 		<column name="role_id" type="integer" required="true"/>
 		<foreign-key foreignTable="roles">
 			<reference local="role_id" foreign="id" />
@@ -15,6 +16,6 @@
 	<table name="roles">
 		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
 		<column name="name" type="varchar" size="30" />
-		<column name="email" type="varchar" size="20" />
+		<column name="role" type="varchar" size="20" />
 	</table>
 </database>

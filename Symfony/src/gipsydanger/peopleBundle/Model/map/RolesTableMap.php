@@ -44,7 +44,7 @@ class RolesTableMap extends TableMap
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addColumn('name', 'Name', 'VARCHAR', false, 30, null);
-        $this->addColumn('email', 'Email', 'VARCHAR', false, 20, null);
+        $this->addColumn('role', 'Role', 'VARCHAR', false, 20, null);
         // validators
     } // initialize()
 

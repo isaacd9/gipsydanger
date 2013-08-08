@@ -8,13 +8,12 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 class Users extends BaseUsers implements UserInterface
 {
-	public function getRoles();
+	public function getUsername()
 	{
-		$roles=$this->getRoles();
-		foreach($roles as $role)
-		{
-			$returnArray[]=$role->getName();
-		}
-		return $returnArray;
+		return $this->getEmail();
+	}
+	public function eraseCredentials()
+	{
+		unset($this->passwordConfirm);
 	}
 }

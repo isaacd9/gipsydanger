@@ -20,11 +20,11 @@ use gipsydanger\peopleBundle\Model\Users;
 /**
  * @method RolesQuery orderById($order = Criteria::ASC) Order by the id column
  * @method RolesQuery orderByName($order = Criteria::ASC) Order by the name column
- * @method RolesQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method RolesQuery orderByRole($order = Criteria::ASC) Order by the role column
  *
  * @method RolesQuery groupById() Group by the id column
  * @method RolesQuery groupByName() Group by the name column
- * @method RolesQuery groupByEmail() Group by the email column
+ * @method RolesQuery groupByRole() Group by the role column
  *
  * @method RolesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method RolesQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -38,11 +38,11 @@ use gipsydanger\peopleBundle\Model\Users;
  * @method Roles findOneOrCreate(PropelPDO $con = null) Return the first Roles matching the query, or a new Roles object populated from the query conditions when no match is found
  *
  * @method Roles findOneByName(string $name) Return the first Roles filtered by the name column
- * @method Roles findOneByEmail(string $email) Return the first Roles filtered by the email column
+ * @method Roles findOneByRole(string $role) Return the first Roles filtered by the role column
  *
  * @method array findById(int $id) Return Roles objects filtered by the id column
  * @method array findByName(string $name) Return Roles objects filtered by the name column
- * @method array findByEmail(string $email) Return Roles objects filtered by the email column
+ * @method array findByRole(string $role) Return Roles objects filtered by the role column
  */
 abstract class BaseRolesQuery extends ModelCriteria
 {
@@ -144,7 +144,7 @@ abstract class BaseRolesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `name`, `email` FROM `roles` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `name`, `role` FROM `roles` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -305,32 +305,32 @@ abstract class BaseRolesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the email column
+     * Filter the query on the role column
      *
      * Example usage:
      * <code>
-     * $query->filterByEmail('fooValue');   // WHERE email = 'fooValue'
-     * $query->filterByEmail('%fooValue%'); // WHERE email LIKE '%fooValue%'
+     * $query->filterByRole('fooValue');   // WHERE role = 'fooValue'
+     * $query->filterByRole('%fooValue%'); // WHERE role LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $email The value to use as filter.
+     * @param     string $role The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return RolesQuery The current query, for fluid interface
      */
-    public function filterByEmail($email = null, $comparison = null)
+    public function filterByRole($role = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($email)) {
+            if (is_array($role)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $email)) {
-                $email = str_replace('*', '%', $email);
+            } elseif (preg_match('/[\%\*]/', $role)) {
+                $role = str_replace('*', '%', $role);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(RolesPeer::EMAIL, $email, $comparison);
+        return $this->addUsingAlias(RolesPeer::ROLE, $role, $comparison);
     }
 
     /**

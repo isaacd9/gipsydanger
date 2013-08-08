@@ -1,5 +1,4 @@
 {% extends '::framework.html.twig' %}
-
 {% block title %}
 <title>join as coach | coach.me</title>
 {% endblock %}
@@ -9,39 +8,41 @@
 {% endblock %}
 
 {% block maincontent %}
-<div class="row">
+<div class="widget">
 	<div class="col-lg-8 col-offset-1 form-content-box">
 		<h3 class="text-primary">Join as a coach</h3>
 		<form class="form-horizontal">
 		  <fieldset>
 			  	<div class="form-group">
 			  		<div class="col-lg-8">
-				      <input type="text" class="form-control half-control" id="exampleInputFname" placeholder="First Name">
-				      <input type="text" class="form-control half-control" id="exampleInputLname" placeholder="Last Name">
+				      <!-- <input type="text" class="form-control half-control" id="exampleInputFname" placeholder="First Name"> -->
+				      <!-- <input type="text" class="form-control half-control" id="exampleInputLname" placeholder="Last Name"> -->
+				      {{ form_widget(loginForm.fname) }}
+				      {{ form_widget(loginForm.lname) }}
 			  		</div>
 			  		<label for="exampleInputFname" class="col-lg-4 control-label text-muted">Avoid aliases or usernames</label>
 			    </div>
-			    
 			    <div class="form-group">
 			    	<div class="col-lg-8">
-			      	<input type="text" class="form-control" id="exampleInputEmail" placeholder="Email">
+			      	<!-- <input type="text" class="form-control" id="exampleInputEmail" placeholder="Email"> -->
+			      	{{ form_widget(loginForm.email) }}
 			    	</div>
 			    	<label for="exampleInputEmail" class="col-lg-4 control-label text-muted">Something you check often</label>
 			    </div>
-			    
 			    <div class="form-group">
 			    	<div class="col-lg-8">
-			      	<input type="text" class="form-control" id="exampleInputPassword" placeholder="Password">
+			      	<!-- <input type="text" class="form-control" id="exampleInputPassword" placeholder="Password"> -->	
+			      	{{ form_widget(loginForm.password.first) }}
 			    	</div>
 			    </div>
-			    
 			    <div class="form-group">
 			    	<div class="col-lg-8">
-			      	<input type="text" class="form-control" id="exampleInputConfirmPassword" placeholder="Confirm Password">
+			      	<!-- <input type="text" class="form-control" id="exampleInputConfirmPassword" placeholder="Confirm Password"> -->
+			      	{{ form_widget(loginForm.password.second) }}
 			    	</div>
 			    </div>
-			    
-			    <button type="submit" class="btn btn-primary">Join and continue to profile creation &rarr;</button>
+			    <!-- <button type="submit" class="btn btn-primary">Join and continue to profile creation &rarr;</button> -->
+			    {{ form_widget(loginForm.register) }}
 		  </fieldset>
 		</form>
 	</div>

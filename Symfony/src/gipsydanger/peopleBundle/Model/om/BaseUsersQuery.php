@@ -19,7 +19,8 @@ use gipsydanger\peopleBundle\Model\UsersQuery;
 
 /**
  * @method UsersQuery orderById($order = Criteria::ASC) Order by the id column
- * @method UsersQuery orderByUsername($order = Criteria::ASC) Order by the username column
+ * @method UsersQuery orderByFname($order = Criteria::ASC) Order by the fname column
+ * @method UsersQuery orderByLname($order = Criteria::ASC) Order by the lname column
  * @method UsersQuery orderByPassword($order = Criteria::ASC) Order by the password column
  * @method UsersQuery orderBySalt($order = Criteria::ASC) Order by the salt column
  * @method UsersQuery orderByEmail($order = Criteria::ASC) Order by the email column
@@ -27,7 +28,8 @@ use gipsydanger\peopleBundle\Model\UsersQuery;
  * @method UsersQuery orderByRoleId($order = Criteria::ASC) Order by the role_id column
  *
  * @method UsersQuery groupById() Group by the id column
- * @method UsersQuery groupByUsername() Group by the username column
+ * @method UsersQuery groupByFname() Group by the fname column
+ * @method UsersQuery groupByLname() Group by the lname column
  * @method UsersQuery groupByPassword() Group by the password column
  * @method UsersQuery groupBySalt() Group by the salt column
  * @method UsersQuery groupByEmail() Group by the email column
@@ -45,7 +47,8 @@ use gipsydanger\peopleBundle\Model\UsersQuery;
  * @method Users findOne(PropelPDO $con = null) Return the first Users matching the query
  * @method Users findOneOrCreate(PropelPDO $con = null) Return the first Users matching the query, or a new Users object populated from the query conditions when no match is found
  *
- * @method Users findOneByUsername(string $username) Return the first Users filtered by the username column
+ * @method Users findOneByFname(string $fname) Return the first Users filtered by the fname column
+ * @method Users findOneByLname(string $lname) Return the first Users filtered by the lname column
  * @method Users findOneByPassword(string $password) Return the first Users filtered by the password column
  * @method Users findOneBySalt(string $salt) Return the first Users filtered by the salt column
  * @method Users findOneByEmail(string $email) Return the first Users filtered by the email column
@@ -53,7 +56,8 @@ use gipsydanger\peopleBundle\Model\UsersQuery;
  * @method Users findOneByRoleId(int $role_id) Return the first Users filtered by the role_id column
  *
  * @method array findById(int $id) Return Users objects filtered by the id column
- * @method array findByUsername(string $username) Return Users objects filtered by the username column
+ * @method array findByFname(string $fname) Return Users objects filtered by the fname column
+ * @method array findByLname(string $lname) Return Users objects filtered by the lname column
  * @method array findByPassword(string $password) Return Users objects filtered by the password column
  * @method array findBySalt(string $salt) Return Users objects filtered by the salt column
  * @method array findByEmail(string $email) Return Users objects filtered by the email column
@@ -160,7 +164,7 @@ abstract class BaseUsersQuery extends ModelCriteria
      */
     protected function findPkSimple($key, $con)
     {
-        $sql = 'SELECT `id`, `username`, `password`, `salt`, `email`, `is_active`, `role_id` FROM `users` WHERE `id` = :p0';
+        $sql = 'SELECT `id`, `fname`, `lname`, `password`, `salt`, `email`, `is_active`, `role_id` FROM `users` WHERE `id` = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -292,32 +296,61 @@ abstract class BaseUsersQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the username column
+     * Filter the query on the fname column
      *
      * Example usage:
      * <code>
-     * $query->filterByUsername('fooValue');   // WHERE username = 'fooValue'
-     * $query->filterByUsername('%fooValue%'); // WHERE username LIKE '%fooValue%'
+     * $query->filterByFname('fooValue');   // WHERE fname = 'fooValue'
+     * $query->filterByFname('%fooValue%'); // WHERE fname LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $username The value to use as filter.
+     * @param     string $fname The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return UsersQuery The current query, for fluid interface
      */
-    public function filterByUsername($username = null, $comparison = null)
+    public function filterByFname($fname = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($username)) {
+            if (is_array($fname)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $username)) {
-                $username = str_replace('*', '%', $username);
+            } elseif (preg_match('/[\%\*]/', $fname)) {
+                $fname = str_replace('*', '%', $fname);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(UsersPeer::USERNAME, $username, $comparison);
+        return $this->addUsingAlias(UsersPeer::FNAME, $fname, $comparison);
+    }
+
+    /**
+     * Filter the query on the lname column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByLname('fooValue');   // WHERE lname = 'fooValue'
+     * $query->filterByLname('%fooValue%'); // WHERE lname LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $lname The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return UsersQuery The current query, for fluid interface
+     */
+    public function filterByLname($lname = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($lname)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $lname)) {
+                $lname = str_replace('*', '%', $lname);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UsersPeer::LNAME, $lname, $comparison);
     }
 
     /**

@@ -53,10 +53,10 @@ abstract class BaseRoles extends BaseObject implements Persistent
     protected $name;
 
     /**
-     * The value for the email field.
+     * The value for the role field.
      * @var        string
      */
-    protected $email;
+    protected $role;
 
     /**
      * @var        PropelObjectCollection|Users[] Collection to store aggregation of Users objects.
@@ -111,13 +111,13 @@ abstract class BaseRoles extends BaseObject implements Persistent
     }
 
     /**
-     * Get the [email] column value.
+     * Get the [role] column value.
      *
      * @return string
      */
-    public function getEmail()
+    public function getRole()
     {
-        return $this->email;
+        return $this->role;
     }
 
     /**
@@ -163,25 +163,25 @@ abstract class BaseRoles extends BaseObject implements Persistent
     } // setName()
 
     /**
-     * Set the value of [email] column.
+     * Set the value of [role] column.
      *
      * @param string $v new value
      * @return Roles The current object (for fluent API support)
      */
-    public function setEmail($v)
+    public function setRole($v)
     {
         if ($v !== null && is_numeric($v)) {
             $v = (string) $v;
         }
 
-        if ($this->email !== $v) {
-            $this->email = $v;
-            $this->modifiedColumns[] = RolesPeer::EMAIL;
+        if ($this->role !== $v) {
+            $this->role = $v;
+            $this->modifiedColumns[] = RolesPeer::ROLE;
         }
 
 
         return $this;
-    } // setEmail()
+    } // setRole()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -217,7 +217,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
 
             $this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
             $this->name = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-            $this->email = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+            $this->role = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -463,8 +463,8 @@ abstract class BaseRoles extends BaseObject implements Persistent
         if ($this->isColumnModified(RolesPeer::NAME)) {
             $modifiedColumns[':p' . $index++]  = '`name`';
         }
-        if ($this->isColumnModified(RolesPeer::EMAIL)) {
-            $modifiedColumns[':p' . $index++]  = '`email`';
+        if ($this->isColumnModified(RolesPeer::ROLE)) {
+            $modifiedColumns[':p' . $index++]  = '`role`';
         }
 
         $sql = sprintf(
@@ -483,8 +483,8 @@ abstract class BaseRoles extends BaseObject implements Persistent
                     case '`name`':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
                         break;
-                    case '`email`':
-                        $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
+                    case '`role`':
+                        $stmt->bindValue($identifier, $this->role, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -635,7 +635,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
                 return $this->getName();
                 break;
             case 2:
-                return $this->getEmail();
+                return $this->getRole();
                 break;
             default:
                 return null;
@@ -668,7 +668,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
         $result = array(
             $keys[0] => $this->getId(),
             $keys[1] => $this->getName(),
-            $keys[2] => $this->getEmail(),
+            $keys[2] => $this->getRole(),
         );
         if ($includeForeignObjects) {
             if (null !== $this->collUserss) {
@@ -715,7 +715,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
                 $this->setName($value);
                 break;
             case 2:
-                $this->setEmail($value);
+                $this->setRole($value);
                 break;
         } // switch()
     }
@@ -743,7 +743,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
 
         if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
         if (array_key_exists($keys[1], $arr)) $this->setName($arr[$keys[1]]);
-        if (array_key_exists($keys[2], $arr)) $this->setEmail($arr[$keys[2]]);
+        if (array_key_exists($keys[2], $arr)) $this->setRole($arr[$keys[2]]);
     }
 
     /**
@@ -757,7 +757,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
 
         if ($this->isColumnModified(RolesPeer::ID)) $criteria->add(RolesPeer::ID, $this->id);
         if ($this->isColumnModified(RolesPeer::NAME)) $criteria->add(RolesPeer::NAME, $this->name);
-        if ($this->isColumnModified(RolesPeer::EMAIL)) $criteria->add(RolesPeer::EMAIL, $this->email);
+        if ($this->isColumnModified(RolesPeer::ROLE)) $criteria->add(RolesPeer::ROLE, $this->role);
 
         return $criteria;
     }
@@ -822,7 +822,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
         $copyObj->setName($this->getName());
-        $copyObj->setEmail($this->getEmail());
+        $copyObj->setRole($this->getRole());
 
         if ($deepCopy && !$this->startCopy) {
             // important: temporarily setNew(false) because this affects the behavior of
@@ -1128,7 +1128,7 @@ abstract class BaseRoles extends BaseObject implements Persistent
     {
         $this->id = null;
         $this->name = null;
-        $this->email = null;
+        $this->role = null;
         $this->alreadyInSave = false;
         $this->alreadyInValidation = false;
         $this->alreadyInClearAllReferencesDeep = false;
