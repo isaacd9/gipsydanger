@@ -5,6 +5,14 @@ body {
   padding-top: 50px;
 }
 
+.no-margin {
+	margin: 0 !important;
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
 /* SIGN-IN/LOGIN
    ============================= */
 
@@ -39,8 +47,56 @@ body {
 /* PROFILE
    ============================= */
 
-.content-box {
-	background-color: #eee;
-	padding: 20px;
+.profile-box {
 	margin-top: 40px;
+}
+
+.padded-box {
+	padding: 20px;
+}
+
+.sub-profile-box {
+	margin-top: 20px;
+	padding: 0;
+}
+
+.sub-profile-box h4 {
+	background-color: #ddd;
+	padding: 20px;
+	cursor: pointer;
+}
+
+.background-content {
+	background-color: #eee;
+}
+
+.username {
+	display: inline;
+	font-size: 20px;
+}
+
+.contact-header {
+	background-color: #5cb85c;
+	padding: 15px;
+	margin: 20px 0 0 0;
+	color: #fff;
+}
+
+.accordion-links div a {
+	background-color: #ddd;
+	color: #333;
+	padding: 10px;
+	display: block;
+}
+
+.accordion-links div a:hover {
+	background-color: #ccc;
+}
+
+.background-list {
+	padding: 20px;
+}
+
+.background-list div {
+	margin-bottom: 20px;
 }
