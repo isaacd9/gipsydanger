@@ -10,7 +10,9 @@ use Symfony\Component\Validator\Constraints\IdenticalTo;
 class baseUserType extends AbstractType
 {
 	public function buildForm(FormBuilderInterface $builder, array $options) {
-		$builder->add('fname','text');
+		$builder->setAction('create-account');
+		$builder->setMethod('POST');
+		$builder->add('fname','text',array());
 		$builder->add('lname','text');
 		$builder->add('email','text');
 		$builder->add('password','repeated',array(
@@ -22,5 +24,4 @@ class baseUserType extends AbstractType
 	public function getName() {
 		return 'Users';
 	}
-
 }
