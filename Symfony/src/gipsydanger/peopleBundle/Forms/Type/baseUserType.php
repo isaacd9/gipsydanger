@@ -12,11 +12,11 @@ class baseUserType extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options) {
 		$builder->setAction('create-account');
 		$builder->setMethod('POST');
-		$builder->add('fname','text',array());
-		$builder->add('lname','text');
-		$builder->add('email','text');
+		$builder->add('fname','text',array('data' => 'First Name'));
+		$builder->add('lname','text',array('data' => 'Last Name'));
+		$builder->add('email','text',array('data' => 'Email'));
 		$builder->add('password','repeated',array(
-			'type' => 'password'
+			'type' => 'password',
 			));
 		$builder->add('register','submit');
 	}
