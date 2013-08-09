@@ -3,6 +3,7 @@
 namespace gipsydanger\peopleBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 use gipsydanger\peopleBundle\Model\Users;
 use gipsydanger\peopleBundle\Forms\Type\baseUserType;
@@ -32,5 +33,23 @@ class accountsController extends Controller
     		default:
     			throw new exception();
     	}
+    }
+
+    public function completeRegistrationAction(Request $request)
+    {
+        $user = new Users();
+        $formHandler=$this->createForm(new baseUserType(),$user);
+
+        $request = $this->getRequest();
+        if($request->getMethod() === "POST")
+        {
+            $formHandler->handleRequest($request);
+            if($formHandler->isValid())
+            {
+                $user->setHashPassword($user->getPassword());
+                $user->save();
+                return new Response($user->getFname());
+            }
+        }
     }
 }

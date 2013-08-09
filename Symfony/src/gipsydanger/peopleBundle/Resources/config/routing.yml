@@ -17,3 +17,7 @@ gipsydangerpeople_signup_coach:
 gipsydangerpeople_signup_user:
     pattern: /sign-up/normal/
     defaults: {_controller: gipsydangerpeopleBundle:accounts:signupForm, type: normal}
+
+gipsydangerpeople_signup_complete:
+    pattern: /sign-up/complete/
+    defaults: { _controller: gipsydangerpeopleBundle:accounts:completeRegistration }
