@@ -12,30 +12,37 @@
     {% endstylesheets %}
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-		  <div class="container">
-		    <a class="navbar-brand" href="#">coachli.st</a>
-		    <div class="nav-collapse collapse">
-		      <ul class="nav navbar-nav">
-		      	{% block browsemenu %}
-		        	<li><a href="#about">Find a Coach</a></li>
-		        {% endblock %}
-		      </ul>
-		      <ul class="nav navbar-nav pull-right">
-		      	{% block joinmenu %}
-		        	<li><a href="#join">Join</a></li>
-		        {% endblock %}
-		        {% block loginmenu %}
-		        	<li><a href="#login">Login</a></li>
-		        {% endblock %}
-		      </ul>
-		    </div>
-		  </div>
-		</div>
-    <div class="container">
-    	{% block maincontent %}{% endblock %}
-    </div><!-- /.container -->
-
+  	<div id="wrap">
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="container">
+			    <a class="navbar-brand" href="#">coachli.st</a>
+			    <div class="nav-collapse collapse">
+			      <ul class="nav navbar-nav">
+			      	{% block browsemenu %}
+			        	<li><a href="#about">Find a Coach</a></li>
+			        {% endblock %}
+			      </ul>
+			      <ul class="nav navbar-nav pull-right">
+			      	{% block joinmenu %}
+			        	<li><a href="#join">Join</a></li>
+			        {% endblock %}
+			        {% block loginmenu %}
+			        	<li><a href="#login">Login</a></li>
+			        {% endblock %}
+			      </ul>
+			    </div>
+			  </div>
+			</div>
+	    <div class="container">
+	    	{% block maincontent %}{% endblock %}
+	    </div>
+	    <div id="push"></div>
+  	</div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted footer-text">Created by <a href="http://twitter.com/hubridnoxx">Zack Elliott</a> and <a href="http://twitter.com/isaacdiamondusa">Isaac Diamond</a> because they were bored for 3 weeks.</p>
+      </div>
+    </div>
     <!-- JavaScript plugins (requires jQuery) -->
     {% javascripts '%kernel.root_dir%/Resources/public/js/*' %}
        <script type="text/javascript" src="{{ asset_url }}"></script>
