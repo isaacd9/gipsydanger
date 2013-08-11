@@ -1,12 +1,80 @@
 {% extends '::framework.html.twig' %}
 
 {% block title %}
-<title>welcome to coachli.st</title>
+<title>find a coach | welcome to coachli.st</title>
 {% endblock %}
 
 {% block maincontent %}
-<div class="starter-template">
-  <h1>Bootstrap starter template</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<div class="row search-box">
+	<div class="col-lg-3 background-content padded-box">
+		<h4 class="filter-header">Filters</h4>
+		<div>
+			<form>
+				<h5>Game</h5>
+				<div class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-default active">
+				    <input type="radio" name="options" id="option1"> All
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="radio" name="options" id="option2"> SC2
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="radio" name="options" id="option3"> Dota 2
+				  </label>
+				</div>
+				<h5>Reputation</h5>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    <i class="icon-star"></i> <i class="icon-star"></i>
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    <i class="icon-star"></i>
+				  </label>
+				</div>
+				<h5>Rate</h5>
+				<div class="input-group rate-group">
+				  <span class="input-group-addon">$</span>
+				  <input type="text" class="form-control">
+				</div>
+				<span class="to-rate">to</span>
+				<div class="input-group rate-group">
+				  <span class="input-group-addon">$</span>
+				  <input type="text" class="form-control">
+				</div>
+				<h5>Location</h5>
+				<input type="text" class="form-control" placeholder="City/Zip">
+				<div class="checkbox">
+		      <label>
+		        <input type="checkbox"> Meets in person
+		      </label>
+		    </div>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-8 col-lg-offset-1 background-content padded-box">
+	<h4 class="filter-header">Results</h4>
+	</div>
 </div>
 {% endblock %}

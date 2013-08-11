@@ -75,7 +75,7 @@ a:hover {
 /* PROFILE
    ============================= */
 
-.profile-box {
+.profile-box, .search-box {
 	margin-top: 40px;
 }
 
@@ -146,6 +146,24 @@ a:hover {
 	margin: 10px 0;
 	font-size: 16px;
 }
+
+/* SEARCH
+   ============================= */
+   
+.filter-header {
+	margin: 0 0 20px 0;
+}
+
+.rate-group {
+	width: 40%;
+}
+
+.to-rate {
+	line-height: 34px; 
+	width: 10%;
+	text-align: center;
+}
+
 
 /* FOOTER
    ============================= */
