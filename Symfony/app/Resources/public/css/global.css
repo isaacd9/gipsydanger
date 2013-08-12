@@ -1,9 +1,45 @@
 /* GLOBAL
    ============================= */
 
+html {
+    height: 100%;
+}
+
 body {
   padding-top: 50px;
+  height: 100%;
 }
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -90px;
+}
+
+#push {
+	height: 90px;
+}
+
+#footer {
+    background-color: #eee;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+/* HEADER
+   ============================= */
+   
+
 
 /* SIGN-IN/LOGIN
    ============================= */
@@ -39,8 +75,100 @@ body {
 /* PROFILE
    ============================= */
 
-.content-box {
-	background-color: #eee;
-	padding: 20px;
+.profile-box, .search-box {
 	margin-top: 40px;
+}
+
+.padded-box {
+	padding: 20px;
+}
+
+.sub-profile-box {
+	margin-top: 20px;
+	padding: 0;
+}
+
+.sub-profile-box h4 {
+	background-color: #ddd;
+	padding: 20px;
+	cursor: pointer;
+}
+
+.background-content {
+	background-color: #eee;
+}
+
+.username {
+	display: inline;
+	font-size: 20px;
+}
+
+.location-info {
+	margin: 5px 0;
+}
+
+.contact-accordion {
+	margin: 20px 0;
+}
+
+.contact-header {
+	background-color: #5cb85c;
+	padding: 15px;
+	margin: 0;
+	color: #fff;
+}
+
+.accordion-links div a {
+	background-color: #ddd;
+	color: #333;
+	padding: 15px 10px;
+	display: block;
+	border-bottom: 1px solid #ccc;
+}
+
+.accordion-links div a:hover {
+	background-color: #ccc;
+}
+
+.content-list {
+	padding: 20px;
+}
+
+.content-list div {
+	margin-bottom: 20px;
+}
+
+.race-labels {
+	margin: 5px 0 0 0;
+}
+
+.review-title {
+	margin: 10px 0;
+	font-size: 16px;
+}
+
+/* SEARCH
+   ============================= */
+   
+.filter-header {
+	margin: 0 0 20px 0;
+}
+
+.rate-group {
+	width: 40%;
+}
+
+.to-rate {
+	line-height: 34px; 
+	width: 10%;
+	text-align: center;
+}
+
+
+/* FOOTER
+   ============================= */
+   
+.footer-text {
+	line-height: 50px;
+	vertical-align: middle;
 }

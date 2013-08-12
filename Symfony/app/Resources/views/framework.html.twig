@@ -6,35 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% stylesheets '%kernel.root_dir%/Resources/public/css/*' %}
       <link rel="stylesheet" href="{{ asset_url }}" />
+      <!-- Icon fonts -->
+      
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     {% endstylesheets %}
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-		  <div class="container">
-		    <a class="navbar-brand" href="#">coach.me</a>
-		    <div class="nav-collapse collapse">
-		      <ul class="nav navbar-nav">
-		      	{% block browsemenu %}
-		        	<li><a href="#about">Find a Coach</a></li>
-		        {% endblock %}
-		      </ul>
-		      <ul class="nav navbar-nav pull-right">
-		      	{% block joinmenu %}
-		        	<li><a href="#join">Join</a></li>
-		        {% endblock %}
-		        {% block loginmenu %}
-		        	<li><a href="#login">Login</a></li>
-		        {% endblock %}
-		      </ul>
-		    </div>
-		  </div>
-		</div>
-    <div class="container">
-    	{% block maincontent %}{% endblock %}
-    </div><!-- /.container -->
-
+  	<div id="wrap">
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="container">
+			    <a class="navbar-brand" href="#">coachli.st</a>
+			    <div class="nav-collapse collapse">
+			      <ul class="nav navbar-nav">
+			      	{% block browsemenu %}
+			        	<li><a href="#about">Find a Coach</a></li>
+			        {% endblock %}
+			      </ul>
+			      <ul class="nav navbar-nav pull-right">
+			      	{% block joinmenu %}
+			        	<li><a href="#join">Join</a></li>
+			        {% endblock %}
+			        {% block loginmenu %}
+			        	<li><a href="#login">Login</a></li>
+			        {% endblock %}
+			      </ul>
+			    </div>
+			  </div>
+			</div>
+	    <div class="container">
+	    	{% block maincontent %}{% endblock %}
+	    </div>
+	    <div id="push"></div>
+  	</div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted footer-text">Created by <a href="http://twitter.com/hubridnoxx">Zack Elliott</a> and <a href="http://twitter.com/isaacdiamondusa">Isaac Diamond</a> because they were bored for 3 weeks.</p>
+      </div>
+    </div>
     <!-- JavaScript plugins (requires jQuery) -->
     {% javascripts '%kernel.root_dir%/Resources/public/js/*' %}
+    		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
        <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
   </body>
