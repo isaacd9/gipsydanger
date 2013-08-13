@@ -4,10 +4,14 @@
 <title>find a coach | welcome to coachli.st</title>
 {% endblock %}
 
+{% block browsemenu %}
+	<li class="active"><a href="#join">Find a Coach</a></li>
+{% endblock %}
+
 {% block maincontent %}
 <div class="row search-box">
 	<div class="col-lg-3 background-content padded-box">
-		<h4 class="filter-header">Filters</h4>
+		<h4 class="filter-header">Filters <i class="icon-refresh icon-spin pull-right"></i></h4>
 		<div>
 			<form>
 				<h5>Game</h5>
@@ -64,7 +68,12 @@
 				  <input type="text" class="form-control">
 				</div>
 				<h5>Location</h5>
-				<input type="text" class="form-control" placeholder="City/Zip">
+				<div class="input-group">
+		      <span class="input-group-addon">
+		        <input type="checkbox">
+		      </span>
+		      <input type="text" class="form-control" placeholder="Location/ZIP">
+		    </div>
 				<div class="checkbox">
 		      <label>
 		        <input type="checkbox"> Meets in person
@@ -74,7 +83,52 @@
 		</div>
 	</div>
 	<div class="col-lg-8 col-lg-offset-1 background-content padded-box">
-	<h4 class="filter-header">Results</h4>
+	<h4 class="filter-header">Results <span class="badge">10</span></h4>
+	<table class="table results-table">
+  <tr>
+		<td>
+			<div class="media">
+			  <img class="media-object pull-left search-avatar" src="...">
+			  <div class="media-body">
+			    <h4 class="media-heading"><a href="">Zack Elliott</a></h4>
+			    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+			  </div>
+			</div>
+			<p class="search-bio">Something interesting yadda yadda yadda this is my bio long long long long long.</p>
+			<span class="label label-info pull-left">SC2</span>
+			<strong class="pull-right">$25</strong>
+		</td>
+		<td>
+			<div class="media">
+			  <img class="media-object pull-left search-avatar" src="...">
+			  <div class="media-body">
+			    <h4 class="media-heading"><a href="">Zack Elliott</a></h4>
+			    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+			  </div>
+			</div>
+			<p class="search-bio">Something interesting yadda yadda yadda this is my bio.</p>
+			<span class="label label-info pull-left">SC2</span>
+			<strong class="pull-right">$25</strong>
+		</td>
+		<td>
+			<div class="media">
+			  <img class="media-object pull-left search-avatar" src="...">
+			  <div class="media-body">
+			    <h4 class="media-heading"><a href="">Zack Elliott</a></h4>
+			    <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i> <i class="icon-star"></i>
+			  </div>
+			</div>
+			<p class="search-bio">Something interesting yadda yadda yadda this is my bio.</p>
+			<span class="label label-info pull-left">SC2</span>
+			<strong class="pull-right">$25</strong>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+  </table>
 	</div>
 </div>
 {% endblock %}
