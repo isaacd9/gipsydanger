@@ -35,7 +35,7 @@ security:
          messages:
              pattern: ^/messages/
              security: true
-             form_login: ~
+             http_basic:
                  realm: 'Secure!'
 
 
