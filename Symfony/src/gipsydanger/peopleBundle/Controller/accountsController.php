@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use gipsydanger\peopleBundle\Model\Users;
 use gipsydanger\peopleBundle\Forms\Type\baseUserType;
+use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 class accountsController extends Controller
 {
@@ -46,7 +47,12 @@ class accountsController extends Controller
             $formHandler->handleRequest($request);
             if($formHandler->isValid())
             {
-                $user->setHashPassword($user->getPassword());
+                $user->setSalt(uniqid(mt_rand(),true));
+                $encoderFactory =  $this->get('security.encoder_factory');
+                $encoder = $encoderFactory->getEncoder($user);
+
+                $hashpass = $encoder->encodePassword($user->getPassword(),$user->getSalt());
+                $user->setPassword($hashpass);
                 $user->save();
                 return new Response($user->getFname());
             }

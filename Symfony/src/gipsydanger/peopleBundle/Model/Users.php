@@ -17,21 +17,4 @@ class Users extends BaseUsers implements UserInterface
 	{
 		return true;
 	}
-	public function setHashPassword($rawPass)
-	{
-		$salt = uniqid(mt_rand(), true);
-		$cryptPass= hash('sha1', $rawPass+''+$salt);
-		$this->setSalt($salt);
-		$this->setPassword($cryptPass);
-	}
-
-	public function isPasswordCorrect($rawPass)
-	{
-		$cryptPass= hash(sha1, $rawPass+''+$this->getSalt());
-		if($this->getPassword === $cryptPass)
-		{
-			return true;
-		}
-		return false;
-	}
 }
