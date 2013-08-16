@@ -24,7 +24,7 @@ security:
              security: false
 
         # secured_area:
-        #     pattern:    ^/demo/secured/
+            #     pattern:    ^/demo/secured/
         #     form_login:
         #         check_path: _security_check
         #         login_path: _demo_login
@@ -33,13 +33,12 @@ security:
                 # target: _demo
 
          messages:
-             pattern: ^/inbox/
+             pattern: ^/messages/
              security: true
-             anonymous: ~
-             http_basic:
+             form_login: ~
                  realm: 'Secure!'
 
 
     access_control:
-        - { path: ^/profile, roles: ROLE_ADMIN }
+        - { path: ^/messages/ }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
